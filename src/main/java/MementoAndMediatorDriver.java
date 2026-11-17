@@ -1,6 +1,7 @@
 import MementoAndMediatorFiles.*;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class MementoAndMediatorDriver {
 
@@ -45,6 +46,23 @@ public class MementoAndMediatorDriver {
         System.out.println("\nTask 5: Unregister a User");
 
         server.unregisterUser(doomguy);
+
+        // iterator
+        System.out.println("\nTask 6: Search Messages by User");
+
+        Iterator<Message> joeIterator = joe.iterator(ado);
+
+        while (joeIterator.hasNext()) {
+            Message message = joeIterator.next();
+            System.out.println(message);
+        }
+
+        Iterator<Message> doomguyIterator = doomguy.iterator(joe);
+
+        while (doomguyIterator.hasNext()) {
+            Message message = doomguyIterator.next();
+            System.out.println(message);
+        }
 
     }
 
